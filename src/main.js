@@ -1,6 +1,9 @@
-import { getFullTimeStudents, getPolyglotStudents, getStudentsByInstructorId, getStudentsInCohort } from "./filterExercises.js";
+import { useInstructors, useStudents } from "./data/classroom.js";
+import { getAvailableInstructors, getFullTimeStudents, getPolyglotStudents, getStudentsByInstructorId, getStudentsInCohort } from "./filterExercises.js";
+import { getStudentsWithMostLangs, getInstructorOfStudent, getStudentById, getStudentByName } from "./findExercises.js";
+import { StudentList } from "./mapExercises.js";
 
-console.log(getStudentsInCohort(42))
-console.log(getFullTimeStudents())
-console.log(getStudentsByInstructorId(6))
-console.log(getPolyglotStudents(6))
+const instructors = useInstructors()
+const students = useStudents()
+
+console.log(StudentList())
