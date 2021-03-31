@@ -57,50 +57,22 @@ export const getPolyglotStudents = (languageCount) => {
 // It should return an array of instructors that don't have any students
 
 export const getAvailableInstructors = () => {
-  let unemployed = instructors
-  let unemployed2 = []
-  const instructorIds = students.map(oneStudent => oneStudent.instructorId)
-  console.log("InstructorIds", instructorIds)
-  
-  const checkInstructor = () => {
-    for(let i = 0; i < instructors.length; i++){instructorIds.filter(oneId => {
-      // console.log("i", i)
-      if(oneId === unemployed[i].id){
-        // console.log("ins",  oneId)
-        // console.log("id", instructorIds[i])
-        // // return console.log("it worked")
-        return unemployed2 = unemployed.slice(i, 1)
-      } 
-    })
-  }
+  const insId = students.map(s => s.instructorId)
+console.log("insId", insId)
+  const unemployed = instructors.filter(i => 
+    !insId.includes(i.id))
+
+  return unemployed
 }
-  checkInstructor()
-  return unemployed2
-  
-} 
- 
-
-
-
-
-// const availableInstructors = instructors.filter(oneTeach => {
-//   if(oneTeach.id !== students.filter(oneStudent => {return oneStudent.instructorId})){
-//     return oneTeach
-//   }
-// })
-// return availableInstructors
-
-
 
 // Export a function called getStudentsByLanguage
 // It should accept one string parameter named `language`
 // It should return an array of students who know the given language
 // HINT: In addition to the `filter` method, you might also look up the `some` method
-// export const getStudentsByLanguage = (language) => {
-//   const studentsLanguage = students.filter(oneStudent => {
-//     if(oneStudent.languages )
-//   })
-// }
+export const getStudentsByLanguage = (language) => {
+  const lang = students.filter(s => s.languages.includes(language))
+    return lang
+}
 
 /******** ADVANCED CHALLENGE ********/
 /******** Only do this if all other tests are passing ****/

@@ -6,4 +6,4 @@ import { StudentList } from "./mapExercises.js";
 const instructors = useInstructors()
 const students = useStudents()
 
-console.log(StudentList())
+console.log(getAvailableInstructors())
