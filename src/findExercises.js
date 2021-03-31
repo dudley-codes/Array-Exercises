@@ -88,7 +88,9 @@ export const getPolyglotStudents = (languageCount) => {
 }
 
 export const getStudentsWithMostLangs = () => {
-  
+  const mostLangs = students.map(one => one.languages.length)
+  const numberOne = (Math.max(...mostLangs)) 
+  return numberOne
 }
 // let mostLangs = students
 //   const langs = students.for(oneStudent => {
