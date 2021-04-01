@@ -58,7 +58,6 @@ export const getPolyglotStudents = (languageCount) => {
 
 export const getAvailableInstructors = () => {
   const insId = students.map(s => s.instructorId)
-console.log("insId", insId)
   const unemployed = instructors.filter(i => 
     !insId.includes(i.id))
 
@@ -82,3 +81,11 @@ export const getStudentsByLanguage = (language) => {
 // It should accept an array of strings as a parameter named `languages`
 // It should return an array of students who know ALL of the given languages
 // Ex: getStudentsByLanguages(["Javascript", "C#"])
+export const getStudentsByLanguages = (languages) => {
+  if(languages.every(r => languages.includes(r.languages))){
+    return true
+  }
+  
+
+
+}
